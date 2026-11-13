@@ -380,7 +380,7 @@ export class ProtectStreamingDelegate implements CameraStreamingDelegate, Stream
   public handleSnapshotRequest(request?: SnapshotRequest, callback?: SnapshotRequestCallback): void {
 
     if(callback) {
-
+      this.log.info(`${this.protectCamera.accessoryName}: Snapshot requested.`);
       guardedDispatch({ callback, handler: (answer) => this.acquireAndPublishSnapshot(request, answer), label: "snapshot request", log: this.log });
 
       return;
