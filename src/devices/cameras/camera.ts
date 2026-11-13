@@ -2248,7 +2248,7 @@ export class ProtectCamera extends ProtectDevice<Camera> implements ProtectCamer
   // Whether this camera can back HomeKit Secure Video: the controller's motion report, read through the record by the shared eligibility predicate. Read non-throwing
   // (fromRecord), so a camera whose record has vanished in the removal grace reports false rather than throwing, exactly as usesTimeshiftLivestream does below.
   public get isHksvCapable(): boolean {
-
+    return false;
     return this.fromRecord(canBackHksv, false);
   }
 
